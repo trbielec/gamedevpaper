@@ -6,7 +6,7 @@
 As with most software industries, when the paradigm of programming of software designs shifted from procedural and function-oriented programming to object-oriented programming, the game development industry adopted this change to take advantage of the many benefits that it offered. These benefits included data encapsulation, easier mapping of concepts to programming structures, and the ability to group and share behavior amongst objects of the same functional type. These benefits allowed additional functionality to be inserted without the need to duplicate a lot of code, thus greatly reducing the time, effort, and cost of developing large-scale software products.
 
 \begin{figure}[h!]
-  \centering \includegraphics[width=0.2\textwidth]{Images/tree}
+  %\centering \includegraphics[width=0.2\textwidth]{Images/tree}
   \caption{A typical game object hierarchy. \cite{evolve_your_hierarchy}}
 \end{figure}
 
@@ -25,7 +25,7 @@ The realization of the benefits of composition over inheritance began a movement
 \subsection{Entity-Component Design}
 
 \begin{figure}[h!]
-  \centering \includegraphics[width=0.48\textwidth]{Images/crysis-components.jpg}
+  %\centering \includegraphics[width=0.48\textwidth]{Images/crysis-components.jpg}
   \caption{Entity component modelling in Crysis. Source: http://piemaster.net-content.s3.amazonaws.com/wp-content/uploads/crysis-components.jpg}
 \end{figure}
 
@@ -34,14 +34,14 @@ The entity-component design paradigm is primarily focused on three primary objec
 There are many benefits that this type of design provides. The primary benefit, however, may be the fact that this type of design is inherently agile in nature. Changing the system is simply the process of adding, removing, or editing the desired entities and/or components. For example, to create a hidden trap object, an invisible object in the game that reacts in some way to the player, a developer may simply have to create the 'Trap' entity, provide it with a 'Position' component, and a 'Script' component that provides some behavioral functionality based on the 'Position' of the entity relative to the player, and register the entity with the correct system-manager that can update the 'Script' component whenever the player moves. Or to make the player invisible, a developer could simply remove the 'Render' component from the 'Player' entity. Additionally, once a component has been created, it is possible to reuse the component across the rest of the system or in future projects as it is simply a set of parameters containing no side-effects or requiring any interfaces for any other objects.
 
 \begin{figure}[h!]
-  \centering \includegraphics[width=0.5\textwidth]{Images/aggregation.png}
+  %\centering \includegraphics[width=0.5\textwidth]{Images/aggregation.png}
   \caption{Entity-component relationship.\cite{evolve_your_hierarchy}}
 \end{figure}
 
 Looking at this type of design, it is clear that the system and all of its entities are data-driven in nature. Rather than an object inheriting from some 'Renderable' object, the desire to render the object is encapsulated into whether or not the entity has a 'Render' component. With this in mind, the complimentary relationship between agile development and entity-component design actually increases due to the fact that rather than having to receive requirements from a customer (the game designer, in respect to the game developer), the developer may actually allow the customer themselves to implement the desired functionality through a scripting engine, such as Dungeon Seige's scripting language Skrit.
 
 \begin{figure}[h!]
-  \centering \includegraphics[width=0.4\textwidth]{Images/skrit.png}
+  %\centering \includegraphics[width=0.4\textwidth]{Images/skrit.png}
   \caption{The Skrit scripting language for describing components in Dungeon Seige II.\cite{data_driven_game_objects}}
 \end{figure}
 
@@ -62,3 +62,52 @@ While functional-versus-imperative programming is primarily an implementation-le
 \section{Creative Interaction}
 
 \section{Frameworks}
+
+\subsection{Background}
+In the game development industry today, Game Engines provide the necessary frameworks, API's, and SDK's for developers to build games for various platforms. The purpose of a game engine is to abstract out the details of commonly used tasks and separate them into reusable components for the developers. Some of the functionality provided by game engine's include Rendering, Physics, User Input, Collision Detection, and Animation. As there are hundreds of different game engines available on the market, functionalities provided by each game engine will differ depending on the type of engine the developers choose to use. There are both commercial and open source game engines but the majority require a commercial license but may include a free non-commercial version.
+
+\subsection{Types of Game Engines}
+There are various types of game engines available to developers. At the lowest level, developers will combine many different API's to develop their own game engines. While this gives developers the flexibility of choosing their own components, it usually comes with a drawback of high costs. There can also be technical issues that can arise when trying to use many different libraries together for the first time. The drawbacks associated with this approach make it less attractive in the gaming industry.\\
+
+The mid-level game engines include many features out of the box. These game engines are usually ready for rendering, physics, user interface, collision detection, and much more with less setup required than that of the low level approach. Developers will still need to do a bit of programming to have a complete game up and running. The Unreal Engine 3 is an example of mid-level engines.\\
+
+At the highest level are game engines that allow for point and click game development with very little programming required. Unity3D and GameMaker are examples of this type of game engine which makes the development process as user friendly as possible. Although these are easy to use engines, they come with a drawback. Most of them are limiting in the types of games they can make or the quality of graphics they can produce. The advantage of quickly developing games have made the high level engines more common today.
+ 
+\subsection{Unreal Engine 3}
+The Unreal Engine 3 is a cross platform game development toolkit that was developed by Epic Games. This toolkit is widely used by many game developers including BioWare (EA), 2K Games, Epic Games (Microsoft), Arkane Studios (Bethesda Softworks), and many more. It has been used to produce hit games including Gears of War, Borderlands, and BioShock. Epic Games describes the Unreal Engine 3 to have been designed with
+
+\begin{quote}
+\ldots ease of content creation and programming in mind, with the goal of putting as much power as possible in the hands of artists and designers to develop assets in a visual environment with minimal programmer assistance, as well as giving programmers a highly modular, scalable and extensible framework for building, testing, and shipping games in a wide range of genres. \cite{unreal_engine_3}
+\end{quote}
+
+Features include tools for Animation, Artificial Intelligence, Audio, Physics, Rendering, Networking, and many more. Although the Unreal Engine 3 is a commercial use game engine, Epic Games released the Unreal Development Kit (UDK) which includes many of the features of the Unreal Engine 3 for free non-commercial use.
+
+\begin{figure}[h!]
+  \centering \includegraphics[width=0.48\textwidth]{Images/unreal_engine3_rendering.jpg}
+  \caption{Rendering produced using the Unreal Engine 3. Source: http://www.unrealengine.com/files/features/rendering1.JPG}
+\end{figure}
+
+\subsection{CryENGINE 3}
+The CryENGINE 3 was developed by Crytek and is used to develop games for Xbox 360, Playstation 3, Windows, and Wii U. CryENGINE 3 was used to develop the first person shooter franchise titled Crysis developed by Crytek and publish by Electronic Arts. Similar to the Unreal Engine 3, CryENGINE 3 is a commercial Game Engine that offers a free version of the toolkit for non-commercial use only. It also includes a large number of tools for Visuals, Characters, AI Systems, Physics, Performance, and many more.
+\begin{figure}[h!]
+  \centering \includegraphics[width=0.48\textwidth]{Images/Crysis3_Fields_Warehouse_ConceptArt.png}
+  \caption{Crysis 3 was develop by Crytek using the CryENGINE 3. Source: http://www.crysis.com/us/screenshots/crysis-3-concept-art-warehouse}
+\end{figure}
+
+\subsection{Unity3D}
+Unity3D is a cross platform game Engine that can be used for Developing Games for Xbox 360, Playstation 3, Windows, iOS, Android, Mac, and more. Unlike CryENGINE 3 and Unreal Engine 3, Unity has a free version that can be used for developing games for commercial use (with certain conditions). The Pro version of Unity3D has a licensing fee but includes a larger set of features than that of the free version. The developers of Unity call it a 
+\begin{quote}
+game development ecosystem: a powerful rendering engine fully integrated with a complete set of intuitive tools and rapid workflows to create interactive 3D content; easy multi-platform publishing; thousands of quality, ready-made assets in the Asset Store and a knowledge-sharing Community. \cite{unity3d}
+\end{quote}
+Although Unity has not been used to produced big name titles like the Unreal Engine 3 has, it is still a popular choice especially for mobile application development. Of the featured games provided on the Unity website, a majority of the titles were developed for iOS, and Android devices.
+\begin{figure}[h!]
+  \centering \includegraphics[width=0.48\textwidth]{Images/Escape-plan-screenshot.jpg}
+  \caption{"Escape Plan" Developed using Unity3D for the Playstation Vita. Source: http://en.wikipedia.org/wiki/File:Escape-plan-screenshot.jpg}
+\end{figure}
+
+\subsection{Cocos2D}
+Cocos2D is an open source 2D game framework released under the MIT License making it free to use and develop for commercial purposes. It has been ported to many different devices including iOS, Android, Blackberry 10, and Windows. There have been thousands of titles produced for mobile devices using Cocos2D.  Unlike Unreal Engine 3, CryENGINE 3, and Unity3D, Cocos2D is not considered a game engine. Its goal is to abstract the details of the low level graphics packages and make game development fast and easy to use for mobile developers. 
+\begin{figure}[h!]
+  \centering \includegraphics[width=0.48\textwidth]{Images/zombie-smash-screenshot.jpg}
+  \caption{"Zombie Smash" Developed for iOS and Android using Cocos2D. Source:http://www.blogcdn.com/www.tuaw.com/media/2010/03/zombie-smash.jpg}
+\end{figure}

@@ -6,7 +6,7 @@
 As with most software industries, when the paradigm of programming of software designs shifted from procedural and function-oriented programming to object-oriented programming, the game development industry adopted this change to take advantage of the many benefits that it offered. These benefits included data encapsulation, easier mapping of concepts to programming structures, and the ability to group and share behavior amongst objects of the same functional type. These benefits allowed additional functionality to be inserted without the need to duplicate a lot of code, thus greatly reducing the time, effort, and cost of developing large-scale software products.
 
 \begin{figure}[h!]
-  %\centering \includegraphics[width=0.2\textwidth]{Images/tree}
+  \centering \includegraphics[width=0.2\textwidth]{Images/tree}
   \caption{A typical game object hierarchy. \cite{evolve_your_hierarchy}}
 \end{figure}
 
@@ -25,7 +25,7 @@ The realization of the benefits of composition over inheritance began a movement
 \subsection{Entity-Component Design}
 
 \begin{figure}[h!]
-  %\centering \includegraphics[width=0.48\textwidth]{Images/crysis-components.jpg}
+  \centering \includegraphics[width=0.48\textwidth]{Images/crysis-components.jpg}
   \caption{Entity component modelling in Crysis. Source: http://piemaster.net-content.s3.amazonaws.com/wp-content/uploads/crysis-components.jpg}
 \end{figure}
 
@@ -34,14 +34,14 @@ The entity-component design paradigm is primarily focused on three primary objec
 There are many benefits that this type of design provides. The primary benefit, however, may be the fact that this type of design is inherently agile in nature. Changing the system is simply the process of adding, removing, or editing the desired entities and/or components. For example, to create a hidden trap object, an invisible object in the game that reacts in some way to the player, a developer may simply have to create the 'Trap' entity, provide it with a 'Position' component, and a 'Script' component that provides some behavioral functionality based on the 'Position' of the entity relative to the player, and register the entity with the correct system-manager that can update the 'Script' component whenever the player moves. Or to make the player invisible, a developer could simply remove the 'Render' component from the 'Player' entity. Additionally, once a component has been created, it is possible to reuse the component across the rest of the system or in future projects as it is simply a set of parameters containing no side-effects or requiring any interfaces for any other objects.
 
 \begin{figure}[h!]
-  %\centering \includegraphics[width=0.5\textwidth]{Images/aggregation.png}
+  \centering \includegraphics[width=0.5\textwidth]{Images/aggregation.png}
   \caption{Entity-component relationship.\cite{evolve_your_hierarchy}}
 \end{figure}
 
 Looking at this type of design, it is clear that the system and all of its entities are data-driven in nature. Rather than an object inheriting from some 'Renderable' object, the desire to render the object is encapsulated into whether or not the entity has a 'Render' component. With this in mind, the complimentary relationship between agile development and entity-component design actually increases due to the fact that rather than having to receive requirements from a customer (the game designer, in respect to the game developer), the developer may actually allow the customer themselves to implement the desired functionality through a scripting engine, such as Dungeon Seige's scripting language Skrit.
 
 \begin{figure}[h!]
-  %\centering \includegraphics[width=0.4\textwidth]{Images/skrit.png}
+  \centering \includegraphics[width=0.4\textwidth]{Images/skrit.png}
   \caption{The Skrit scripting language for describing components in Dungeon Seige II.\cite{data_driven_game_objects}}
 \end{figure}
 

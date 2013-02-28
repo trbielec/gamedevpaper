@@ -6,7 +6,11 @@
 *.auxbbl.make
 *.bbl
 *.blg
+<<<<<<< HEAD
 *.d
+=======
+.DS_Store
+>>>>>>> ...
 *.dvi
 *.fdb_latexmk
 *.fls
@@ -31,6 +35,7 @@
 *.ps
 *.snm
 *.synctex.gz
+*.swp
 *.toc
 *.vrb
 *.xdy

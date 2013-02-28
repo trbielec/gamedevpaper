@@ -6,11 +6,8 @@
 *.auxbbl.make
 *.bbl
 *.blg
-<<<<<<< HEAD
 *.d
-=======
 .DS_Store
->>>>>>> ...
 *.dvi
 *.fdb_latexmk
 *.fls

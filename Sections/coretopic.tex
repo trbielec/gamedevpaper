@@ -1,24 +1,62 @@
 \section{Requirements}
 
+\subsection{Background}
+Requirements elicitation is a very difficult part of developing software systems. In order to understand what requirements elicitation is, we first have to further define requirement. A requirement can be defined as
+\begin{quote}
+	(1) a condition or capability needed by a user to solve a problem or achieve an objective; (2) a condition or capability that must be met or possessed by a system or system component to satisfy a contract, standard, specification, or other formally imposed documents; (3) a documented representation of a condition or capability as in (1) or (2)\cite{september1990ieee}.
+\end{quote}
+
+The exact breakdown of what constitutes requirements elicitation is still being debated. Once source separates requirements into function and nonfunctional requirements\cite{southwell1987requirements}. They then further classify the nonfunctional requirements into performance/reliability, interfaces, and design constraints.
+
+The process for requirements elicitation is decomposed into three activities \cite{rzepka1989requirements}. The first is the elicitation of requirements from various individual sources. Then you need to insure that the needs of all users are consistent and feasible, and finally you need to validate that the requirements are an accurate reflection of the users needs.
+
+There are many general problems with elicitation including\cite{mcdermid1989requirements}:
+\begin{enumerate}
+	\item Problems of scope
+	\begin{itemize}
+		\item The boundary of the system is ill-defined
+		\item Unnecessary design information was given
+	\end{itemize}
+	\item Problems of understanding
+	\begin{itemize}
+		\item Users have incomplete understanding of their needs
+		\item Users have poor understanding of computer capabilities
+		\item Analysts have poor knowledge of problem domain
+		\item User and analyst speak different languages
+		\item Ease of omitting ``obvious'' information
+		\item Conflicting views of different users
+		\item Requirements are often vague and untestable, e.g. ``user friendly'' and ``robust''
+	\end{itemize}
+	\item Problems of volatility
+	\begin{itemize}
+		\item Requirements evolve over time
+	\end{itemize}
+\end{enumerate}
+The understanding and volatility issues will still be present in game design, but scope issues may not be as large of a problem as they are in other software systems.
+
+\subsection{Emotional Requirements}
+
+Now that we have discussed requirements elicitation generally, we can analyze the differences between normal software requirements elicitation and video game requirements elicitation. Video game designers are concerned with the players experience which is rather difficult to define. One definition\cite{callele2006emotional} describes the player experience as ``the means by which the player's consciousness is cognitively engaged while simultaneously inducing emotional responses''. The emotional requirements can then be further broken down into the emotional intent of the designer and the means by which the designer expects to induce the target emotional state\cite{callele2006emotional}. This makes the nonfunctional requirements much more paramount to the success of the software system. In order to successfully capture the emotional requirement, it must capture\cite{callele2006emotional} ``the intent of the designer, and the means by which the designer expects to induce the target emotional state''.
+
 \section{Design}
 
 \subsection{Background}
-As with most software industries, when the paradigm of programming of software designs shifted from procedural and function-oriented programming to object-oriented programming, the game development industry adopted this change to take advantage of the many benefits that it offered. These benefits included data encapsulation, easier mapping of concepts to programming structures, and the ability to group and share behavior amongst objects of the same functional type. These benefits allowed additional functionality to be inserted without the need to duplicate a lot of code, thus greatly reducing the time, effort, and cost of developing large-scale software products.
+As with most software industries, when the paradigm of programming of software designs shifted from imperative to object-oriented programming, the game development industry adopted this change to take advantage of the many benefits that it offered. These benefits included data encapsulation, easier mapping of concepts to programming structures, and the ability to group and share behavior amongst objects of the same functional type. These benefits allowed additional functionality to be inserted without the need to duplicate a lot of code, thus greatly reducing the time, effort, and cost of developing large-scale software products.
 
 \begin{figure}[h!]
   \centering \includegraphics[width=0.2\textwidth]{Images/tree}
-  \caption{A typical game object hierarchy. \cite{evolve_your_hierarchy}}
+  \caption{A typical game object hierarchy. \cite{west2006evolve}}
 \end{figure}
 
 In a typical object-oriented software product, the objects form a hierarchical tree that has width (many objects with the same direct ancestor, such as there are many weapon-types that are each modeled as an object, and they would all share the same ancestor of 'Weapon'), and height (set of objects that form a list of direct ancestors for each other, such as how a 'DwarfMale' is a 'Dwarf' that is a 'PlayableCharacter' that is a 'Character' that is an 'Entity', and so on). This tree-like structure describes the term inheritance, where one object such as 'DwarfMale' may inherit functionality from 'Dwarf'. In small-to-medium sized products, inheritance can make development both simpler and much more efficient. However, as projects grow and changes are made, designing objects around inheritance can lead to problems due to relationships between objects in the tree. Changing or adding code at the root of the tree may cause the changes to cascade down through the rest of the tree, resulting in undesired behavior, as described by Herb Marslas, a developer for Age of Empires II:
 
 \begin{quote}
-\ldots functionality can be added or changed in a single place in the code to affect many different game units. One such change inadvertently added line-of-sight checking for trees.\cite{game_object_structure}
+\ldots functionality can be added or changed in a single place in the code to affect many different game units. One such change inadvertently added line-of-sight checking for trees\cite{wilson2003game}.
 \end{quote}
 
 With the development archetype shifting from the waterfall method, where projects are defined at the beginning and are less adaptable to changes, to a more agile and iterative-based approach, the ability to change the project on both small and large scales becomes a requirement of the design of the project. As teams in the game development industry began to conduct agile development processes, they began to realize that the object-oriented design paradigm was not as flexible and adaptable as it needed to be, largely in part due to the inheritance structure and requirement of defined interfaces between objects.
 
-To solve the issues with large inheritance trees, architects, designers, and programmers discovered\cite{flexible_framework_for_game_development} the benefits of composition over inheritance, where it is better and/or easier to consider a has-a relationship over an is-a relationship between objects. An example of this can be described as the difference between a 'Character' object having a position in the world, rather than a 'Character' object being a 'PositionalObject'. The distinction is small conceptually, but rather large in terms of design and implementation of the project. In order to change the 'Character' to not having a position, a developer would simply have to remove the position with respect to the composition method, while the inheritance method would require the object to be placed somewhere else in the tree, potentially leading to side effects and/or undesired behavior.
+To solve the issues with large inheritance trees, architects, designers, and programmers discovered\cite{haller2002generic} the benefits of composition over inheritance, where it is better and/or easier to consider a has-a relationship over an is-a relationship between objects. An example of this can be described as the difference between a 'Character' object having a position in the world, rather than a 'Character' object being a 'PositionalObject'. The distinction is small conceptually, but rather large in terms of design and implementation of the project. In order to change the 'Character' to not having a position, a developer would simply have to remove the position with respect to the composition method, while the inheritance method would require the object to be placed somewhere else in the tree, potentially leading to side effects and/or undesired behavior.
 
 The realization of the benefits of composition over inheritance began a movement of the game development industry to a design pattern known as 'Entity-Component Systems', where objects are modelled by what they are composed of or contain, rather than their position in the hierarchical inheritance tree.
 
@@ -26,7 +64,7 @@ The realization of the benefits of composition over inheritance began a movement
 
 \begin{figure}[h!]
   \centering \includegraphics[width=0.48\textwidth]{Images/crysis-components.jpg}
-  \caption{Entity component modelling in Crysis. Source: http://piemaster.net-content.s3.amazonaws.com/wp-content/uploads/crysis-components.jpg}
+	\caption{Entity component modelling in Crysis. Source: \url{http://piemaster.net-content.s3.amazonaws.com/wp-content/uploads/crysis-components.jpg}}
 \end{figure}
 
 The entity-component design paradigm is primarily focused on three primary objects in the application: entities, components, and system-managers (or component-managers). Entities are the primary conceptual objects in the game, such as 'Player', 'Target', and 'Map', among others. Components, on the other hand, are essentially atomic parameters that can be attributed to an entity. For example, a 'Player' entity may have a 'Position' component, a 'Render' component, a 'Velocity' component, a 'Physics' component and anything else that describes the behavior of a 'Player' entity. The other object type, system-managers are objects responsible for the management of entities and their components, and the coordination and synchronization of each respective type. For example, a 'RenderSystemManager' may be responsible for iterating through every entity with a 'Render' component, and rendering that entity to the display.
@@ -42,7 +80,7 @@ Looking at this type of design, it is clear that the system and all of its entit
 
 \begin{figure}[h!]
   \centering \includegraphics[width=0.4\textwidth]{Images/skrit.png}
-  \caption{The Skrit scripting language for describing components in Dungeon Seige II.\cite{data_driven_game_objects}}
+	\caption{The Skrit scripting language for describing components in Dungeon Seige II\cite{bilas2002data}.}
 \end{figure}
 
 Incorporating scripting languages allows the game designers--that is, the department whose job it is to define the functionality of the game and its entities--to actually define the functionality of an entity. Not only does this align perfectly with the agile manifesto, where interaction with the customer is paramount, but it also (if implemented correctly) allows different entities and components to be injected, removed, or edited at run-time to provide instant feedback to both the developer and the designer. This allows for an efficient iterative approach to be taken when developing the game as a whole.
@@ -84,14 +122,14 @@ Features include tools for Animation, Artificial Intelligence, Audio, Physics, R
 
 \begin{figure}[h!]
   \centering \includegraphics[width=0.48\textwidth]{Images/unreal_engine3_rendering.jpg}
-  \caption{Rendering produced using the Unreal Engine 3. Source: http://www.unrealengine.com/files/features/rendering1.JPG}
+	\caption{Rendering produced using the Unreal Engine 3. Source: \url{http://www.unrealengine.com/files/features/rendering1.JPG}}
 \end{figure}
 
 \subsection{CryENGINE 3}
 The CryENGINE 3 was developed by Crytek and is used to develop games for Xbox 360, Playstation 3, Windows, and Wii U. CryENGINE 3 was used to develop the first person shooter franchise titled Crysis developed by Crytek and publish by Electronic Arts. Similar to the Unreal Engine 3, CryENGINE 3 is a commercial Game Engine that offers a free version of the toolkit for non-commercial use only. It also includes a large number of tools for Visuals, Characters, AI Systems, Physics, Performance, and many more.
 \begin{figure}[h!]
   \centering \includegraphics[width=0.48\textwidth]{Images/Crysis3_Fields_Warehouse_ConceptArt.png}
-  \caption{Crysis 3 was develop by Crytek using the CryENGINE 3. Source: http://www.crysis.com/us/screenshots/crysis-3-concept-art-warehouse}
+	\caption{Crysis 3 was develop by Crytek using the CryENGINE 3. Source: \url{http://www.crysis.com/us/screenshots/crysis-3-concept-art-warehouse}}
 \end{figure}
 
 \subsection{Unity3D}
@@ -102,12 +140,12 @@ game development ecosystem: a powerful rendering engine fully integrated with a 
 Although Unity has not been used to produced big name titles like the Unreal Engine 3 has, it is still a popular choice especially for mobile application development. Of the featured games provided on the Unity website, a majority of the titles were developed for iOS, and Android devices.
 \begin{figure}[h!]
   \centering \includegraphics[width=0.48\textwidth]{Images/Escape-plan-screenshot.jpg}
-  \caption{"Escape Plan" Developed using Unity3D for the Playstation Vita. Source: http://en.wikipedia.org/wiki/File:Escape-plan-screenshot.jpg}
+	\caption{"Escape Plan" Developed using Unity3D for the Playstation Vita. Source: \url{http://en.wikipedia.org/wiki/File:Escape-plan-screenshot.jpg}}
 \end{figure}
 
 \subsection{Cocos2D}
 Cocos2D is an open source 2D game framework released under the MIT License making it free to use and develop for commercial purposes. It has been ported to many different devices including iOS, Android, Blackberry 10, and Windows. There have been thousands of titles produced for mobile devices using Cocos2D.  Unlike Unreal Engine 3, CryENGINE 3, and Unity3D, Cocos2D is not considered a game engine. Its goal is to abstract the details of the low level graphics packages and make game development fast and easy to use for mobile developers. 
 \begin{figure}[h!]
   \centering \includegraphics[width=0.48\textwidth]{Images/zombie-smash-screenshot.jpg}
-  \caption{"Zombie Smash" Developed for iOS and Android using Cocos2D. Source:http://www.blogcdn.com/www.tuaw.com/media/2010/03/zombie-smash.jpg}
+	\caption{"Zombie Smash" Developed for iOS and Android using Cocos2D. Source: \url{http://www.blogcdn.com/www.tuaw.com/media/2010/03/zombie-smash.jpg}}
 \end{figure}

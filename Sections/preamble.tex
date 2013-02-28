@@ -1,9 +1,19 @@
 \usepackage{cite}
 
-\usepackage{url}
-
-\hyphenation{op-tical net-works semi-conduc-tor}
-
+% change the default ugly hyperref url's
+% (by default links are surrounded by green
+% borders, which is pretty ugly\ldots)
+\usepackage{xcolor}
 \usepackage[pdftitle=Game Development,%
             pdfauthor=T Bielecki,]%
             {hyperref}
+\definecolor{dark-red}{rgb}{0.4,0.15,0.15}
+\definecolor{dark-blue}{rgb}{0.15,0.15,0.4}
+\definecolor{medium-blue}{rgb}{0,0,0.5}
+\hypersetup{
+	  colorlinks, linkcolor={dark-red},
+		  citecolor={dark-blue}, urlcolor={medium-blue}
+}
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+

@@ -28,6 +28,15 @@ main.aux main.aux.make main.d main.pdf: $(call path-norm,Sections/introduction.t
 main.aux main.aux.make main.d main.pdf: $(call path-norm,Sections/preamble.tex)
 main.aux main.aux.make main.d main.pdf: $(call path-norm,main.tex)
 .SECONDEXPANSION:
+-include Images/mockup.png.gpi.d
+main.d: $$(call graphics-source,Images/mockup.png)
+main.pdf main._graphics: $$(call graphics-target,Images/mockup.png)
+-include Images/final.png.gpi.d
+main.d: $$(call graphics-source,Images/final.png)
+main.pdf main._graphics: $$(call graphics-target,Images/final.png)
+-include Images/emotion_intensity_map.png.gpi.d
+main.d: $$(call graphics-source,Images/emotion_intensity_map.png)
+main.pdf main._graphics: $$(call graphics-target,Images/emotion_intensity_map.png)
 -include Images/tree.png.gpi.d
 main.d: $$(call graphics-source,Images/tree.png)
 main.pdf main._graphics: $$(call graphics-target,Images/tree.png)

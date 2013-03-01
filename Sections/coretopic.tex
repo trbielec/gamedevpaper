@@ -1,12 +1,12 @@
 \section{Requirements}
-
 \subsection{Background}
-Requirements elicitation is a very difficult part of developing software systems. In order to understand what requirements elicitation is, we first have to further define requirement. A requirement can be defined as
+Requirements elicitation is a very difficult part of software development. In order to understand what requirements elicitation is, we first have to further define requirement:
 \begin{quote}
 	(1) a condition or capability needed by a user to solve a problem or achieve an objective; (2) a condition or capability that must be met or possessed by a system or system component to satisfy a contract, standard, specification, or other formally imposed documents; (3) a documented representation of a condition or capability as in (1) or (2)\cite{september1990ieee}.
 \end{quote}
+In game design, many of the users requirements are vague and subjective. For example, the requirement that a game must be \emph{fun} and \emph{absorbing} is not a very well understood requirement. 
 
-The exact breakdown of what constitutes requirements elicitation is still being debated. Once source separates requirements into function and nonfunctional requirements\cite{southwell1987requirements}. They then further classify the nonfunctional requirements into performance/reliability, interfaces, and design constraints.
+The exact breakdown of what requirements elicitation entails is still being debated. Once source separates requirements into function and nonfunctional requirements\cite{southwell1987requirements}. They then further classify the nonfunctional requirements into performance/reliability, interfaces, and design constraints.
 
 The process for requirements elicitation is decomposed into three activities \cite{rzepka1989requirements}. The first is the elicitation of requirements from various individual sources. Then you need to insure that the needs of all users are consistent and feasible, and finally you need to validate that the requirements are an accurate reflection of the users needs.
 
@@ -36,7 +36,25 @@ The understanding and volatility issues will still be present in game design, bu
 
 \subsection{Emotional Requirements}
 
-Now that we have discussed requirements elicitation generally, we can analyze the differences between normal software requirements elicitation and video game requirements elicitation. Video game designers are concerned with the players experience which is rather difficult to define. One definition\cite{callele2006emotional} describes the player experience as ``the means by which the player's consciousness is cognitively engaged while simultaneously inducing emotional responses''. The emotional requirements can then be further broken down into the emotional intent of the designer and the means by which the designer expects to induce the target emotional state\cite{callele2006emotional}. This makes the nonfunctional requirements much more paramount to the success of the software system. In order to successfully capture the emotional requirement, it must capture\cite{callele2006emotional} ``the intent of the designer, and the means by which the designer expects to induce the target emotional state''.
+Now that we have discussed requirements elicitation generally, we can analyze the differences between normal software requirements elicitation and video game requirements elicitation. Video game designers are concerned with the players experience which is rather difficult to define. One definition describes the player experience as ``the means by which the player's consciousness is cognitively engaged while simultaneously inducing emotional responses''\cite{callele2006emotional}. The emotional requirements can then be further broken down into the emotional intent of the designer and the means by which the designer expects to induce the target emotional state\cite{callele2006emotional}. This makes the nonfunctional requirements much more paramount to the success of the software system. In order to successfully capture the emotional requirement, it must capture ``the intent of the designer, and the means by which the designer expects to induce the target emotional state''\cite{callele2006emotional}.
+
+There are several different methods for representing emotional requirements. The \emph{emotional terrain} method captures artistic expression with spatial qualifiers. A range of colors are used in order to represent emotion at a specific point in time in a game. A newer method requires creating an \emph{emotion intensity map} (Figure \ref{emotion_intensity_map}).
+
+\begin{figure}[!ht]
+	\includegraphics[scale=0.3]{Images/emotion_intensity_map}
+	\label{emotion_intensity_map}
+	\caption{Emotion Intensity Map \cite{callele2006emotional}}
+\end{figure}
+
+The emotion intensity map uses luminance to quantify intensity, and emotions are mapped by either a Chernoff Face\cite{flury1981graphical}, or Ekman's Facial Action Coding System\cite{ekman2002facial}.
+
+\emph{Temporal qualifiers} are also unique to game design. For example, ``if a player reaches a room within 5 minutes of the start of gameplay, the player is very skilled so increase the intensity''\cite{callele2006emotional}. Focus groups and post-gameplay interviews can also be used to gauge the emotional response of the users during gameplay. This can be used to ensure that the desired emotion is induced in the user at the correct time in a game.
+
+There are also several software requirements that are never captured in an official manner\cite{bentley2002putting}. In practice, usability, immersion, and motivation are usually considered in user surveys.
+
+\subsection{Requirements Language}
+
+\subsection{Elicitation and Feedback}
 
 \section{Design}
 

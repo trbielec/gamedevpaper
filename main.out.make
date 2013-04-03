@@ -17,12 +17,14 @@
 \BOOKMARK [2][-]{subsection.4.7}{Regression testing}{section.4}% 17
 \BOOKMARK [2][-]{subsection.4.8}{Beta testing}{section.4}% 18
 \BOOKMARK [1][-]{section.5}{Creative Interaction}{}% 19
-\BOOKMARK [1][-]{section.6}{Frameworks}{}% 20
-\BOOKMARK [2][-]{subsection.6.1}{Background}{section.6}% 21
-\BOOKMARK [2][-]{subsection.6.2}{Types of Game Engines}{section.6}% 22
-\BOOKMARK [2][-]{subsection.6.3}{Unreal Engine 3}{section.6}% 23
-\BOOKMARK [2][-]{subsection.6.4}{CryENGINE 3}{section.6}% 24
-\BOOKMARK [2][-]{subsection.6.5}{Unity3D}{section.6}% 25
-\BOOKMARK [2][-]{subsection.6.6}{Cocos2D}{section.6}% 26
-\BOOKMARK [1][-]{section.7}{Conclusion}{}% 27
-\BOOKMARK [1][-]{section*.1}{References}{}% 28
+\BOOKMARK [2][-]{subsection.5.1}{Control}{section.5}% 20
+\BOOKMARK [2][-]{subsection.5.2}{Feedback}{section.5}% 21
+\BOOKMARK [1][-]{section.6}{Frameworks}{}% 22
+\BOOKMARK [2][-]{subsection.6.1}{Background}{section.6}% 23
+\BOOKMARK [2][-]{subsection.6.2}{Types of Game Engines}{section.6}% 24
+\BOOKMARK [2][-]{subsection.6.3}{Unreal Engine 3}{section.6}% 25
+\BOOKMARK [2][-]{subsection.6.4}{CryENGINE 3}{section.6}% 26
+\BOOKMARK [2][-]{subsection.6.5}{Unity3D}{section.6}% 27
+\BOOKMARK [2][-]{subsection.6.6}{Cocos2D}{section.6}% 28
+\BOOKMARK [1][-]{section.7}{Conclusion}{}% 29
+\BOOKMARK [1][-]{section*.1}{References}{}% 30

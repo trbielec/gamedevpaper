@@ -1,12 +1,12 @@
 \section{Requirements}
 \subsection{Background}
-Requirements elicitation is a very difficult part of software development. In order to understand what requirements elicitation is, we first have to further define requirement:
+Requirements elicitation is a very difficult part of software development. In order to understand what requirements elicitation is, we first have to further define requirement\cite[p. 62]{september1990ieee}:
 \begin{quote}
-	(1) a condition or capability needed by a user to solve a problem or achieve an objective; (2) a condition or capability that must be met or possessed by a system or system component to satisfy a contract, standard, specification, or other formally imposed documents; (3) a documented representation of a condition or capability as in (1) or (2)\cite{september1990ieee}.
+	(1) a condition or capability needed by a user to solve a problem or achieve an objective; (2) a condition or capability that must be met or possessed by a system or system component to satisfy a contract, standard, specification, or other formally imposed documents; (3) a documented representation of a condition or capability as in (1) or (2).
 \end{quote}
 In game design, many of the users requirements are vague and subjective. For example, the requirement that a game must be \emph{fun} and \emph{absorbing} is not a very well understood requirement. 
 
-Also, the exact breakdown of what requirements elicitation entails is still being debated. Once source separates requirements into function and nonfunctional requirements\cite{southwell1987requirements}. They then further classify the nonfunctional requirements into performance/reliability, interfaces, and design constraints.
+Also, the exact breakdown of what requirements elicitation entails is still being debated. One source separates requirements into function and nonfunctional requirements\cite{southwell1987requirements}. They then further classify the nonfunctional requirements into performance/reliability, interfaces, and design constraints.
 
 The process for requirements elicitation is decomposed into three activities \cite{rzepka1989requirements}. The first is the elicitation of requirements from various individual sources. Then you need to insure that the needs of all users are consistent and feasible, and finally you need to validate that the requirements are an accurate reflection of the users needs.
 
@@ -47,7 +47,7 @@ A game design document should describe several things\cite{bethke2003game}
 	\item \emph{Game Assets:} Design of the 3D models, voices, motion capture, sound effects, music
 \end{itemize}
 
-The requirements documents are usually written along side the design documents. Requirements can take several forms including\cite{bethke2003game} frame rate requirements, the size of the resulting binary, the length of time it should take to product the product, having few defects, being able to process 100,000 polygon characters, etc. Once as many of the requirements as possible have been identified, the requirements are usually modelled using UML and use case diagrams as in standard software engineering. Prototyping is also very common, figure \ref{mockup} shows a mockup in early production, and \ref{final} shows the resulting screen. 
+The requirements documents are usually written along side the design documents. Requirements can take several forms including\cite{bethke2003game} frame rate requirements, the size of the resulting binary, the length of time it should take to produce the product, having few defects, being able to process 100,000 polygon characters, etc. Once as many of the requirements as possible have been identified, the requirements are usually modelled using UML and use case diagrams as in standard software engineering. Prototyping is also very common, (Figure \ref{mockup}) shows a mockup in early production, and (Figure \ref{final}) shows the resulting screen.
 
 \begin{figure}[!ht]
 	\includegraphics[scale=0.5]{Images/mockup}
@@ -63,7 +63,7 @@ The requirements documents are usually written along side the design documents. 
 
 \subsection{Emotional Requirements}
 
-Once of the most difficult parts of requirements elicitation process is the specification of the emotional requirements. Video game designers are concerned with the players experience which is rather difficult to define. One definition describes the player experience as ``the means by which the player's consciousness is cognitively engaged while simultaneously inducing emotional responses''\cite{callele2006emotional}. The emotional requirements can then be further broken down into the emotional intent of the designer and the means by which the designer expects to induce the target emotional state\cite{callele2006emotional}. This makes the nonfunctional requirements much more paramount to the success of the software system. In order to successfully capture the emotional requirement, it must capture ``the intent of the designer, and the means by which the designer expects to induce the target emotional state''\cite{callele2006emotional}.
+One of the most difficult parts of requirements elicitation process is the specification of the emotional requirements. Video game designers are concerned with the players experience which is rather difficult to define. One definition describes the player experience as ``the means by which the player's consciousness is cognitively engaged while simultaneously inducing emotional responses''\cite{callele2006emotional}. The emotional requirements can then be further broken down into the emotional intent of the designer and the means by which the designer expects to induce the target emotional state\cite{callele2006emotional}. This makes the nonfunctional requirements much more paramount to the success of the software system. In order to successfully capture the emotional requirement, it must capture ``the intent of the designer, and the means by which the designer expects to induce the target emotional state''\cite{callele2006emotional}.
 
 There are several different methods for representing emotional requirements. The \emph{emotional terrain} method captures artistic expression with spatial qualifiers. A range of colors are used in order to represent emotion at a specific point in time in a game. A newer method requires creating an \emph{emotion intensity map} (Figure \ref{emotion_intensity_map}).
 
@@ -84,7 +84,7 @@ There are also several software requirements that are never captured in an offic
 \subsection{Background}
 As with most software industries, when the paradigm of programming of software designs shifted from imperative to object-oriented programming, the game development industry adopted this change to take advantage of the many benefits that it offered. These benefits included data encapsulation, easier mapping of concepts to programming structures, and the ability to group and share behavior amongst objects of the same functional type. These benefits allowed additional functionality to be inserted without the need to duplicate a lot of code, thus greatly reducing the time, effort, and cost of developing large-scale software products.
 
-\begin{figure}[h!]
+\begin{figure}[!h]
   \centering \includegraphics[width=0.2\textwidth]{Images/tree}
   \caption{A typical game object hierarchy. \cite{west2006evolve}}
 \end{figure}
@@ -103,7 +103,7 @@ The realization of the benefits of composition over inheritance began a movement
 
 \subsection{Entity-Component Design}
 
-\begin{figure}[h!]
+\begin{figure}[!ht]
   \centering \includegraphics[width=0.48\textwidth]{Images/crysis-components.jpg}
 	\caption{Entity component modelling in Crysis. Source: \url{http://piemaster.net-content.s3.amazonaws.com/wp-content/uploads/crysis-components.jpg}}
 \end{figure}
@@ -112,14 +112,14 @@ The entity-component design paradigm is primarily focused on three primary objec
 
 There are many benefits that this type of design provides. The primary benefit, however, may be the fact that this type of design is inherently agile in nature. Changing the system is simply the process of adding, removing, or editing the desired entities and/or components. For example, to create a hidden trap object, an invisible object in the game that reacts in some way to the player, a developer may simply have to create the 'Trap' entity, provide it with a 'Position' component, and a 'Script' component that provides some behavioral functionality based on the 'Position' of the entity relative to the player, and register the entity with the correct system-manager that can update the 'Script' component whenever the player moves. Or to make the player invisible, a developer could simply remove the 'Render' component from the 'Player' entity. Additionally, once a component has been created, it is possible to reuse the component across the rest of the system or in future projects as it is simply a set of parameters containing no side-effects or requiring any interfaces for any other objects.
 
-\begin{figure}[h!]
+\begin{figure}[!ht]
   \centering \includegraphics[width=0.5\textwidth]{Images/aggregation.png}
   \caption{Entity-component relationship.\cite{evolve_your_hierarchy}}
 \end{figure}
 
 Looking at this type of design, it is clear that the system and all of its entities are data-driven in nature. Rather than an object inheriting from some 'Renderable' object, the desire to render the object is encapsulated into whether or not the entity has a 'Render' component. With this in mind, the complimentary relationship between agile development and entity-component design actually increases due to the fact that rather than having to receive requirements from a customer (the game designer, in respect to the game developer), the developer may actually allow the customer themselves to implement the desired functionality through a scripting engine, such as Dungeon Seige's scripting language Skrit.
 
-\begin{figure}[h!]
+\begin{figure}[!ht]
   \centering \includegraphics[width=0.4\textwidth]{Images/skrit.png}
 	\caption{The Skrit scripting language for describing components in Dungeon Seige II\cite{bilas2002data}.}
 \end{figure}
@@ -193,14 +193,14 @@ Unreal Engine 3 is a cross platform game development toolkit that was developed 
 
 Features include tools for animation, artificial intelligence, audio, physics, rendering, networking, and more. Although Unreal Engine 3 is a commercial-use game engine, Epic Games released the Unreal Development Kit (UDK) which includes many of the features of the Unreal Engine 3 for free non-commercial use.
 
-\begin{figure}[h!]
+\begin{figure}[!ht]
   \centering \includegraphics[width=0.48\textwidth]{Images/unreal_engine3_rendering.jpg}
 	\caption{Rendering produced using the Unreal Engine 3. Source: \url{http://www.unrealengine.com/files/features/rendering1.JPG}}
 \end{figure}
 
 \subsection{CryENGINE 3}
 CryENGINE 3 was developed by Crytek and is used to develop games for Xbox 360, Playstation 3, Windows, and Wii U. CryENGINE 3 was used to develop the first person shooter franchise titled Crysis developed by Crytek and publish by Electronic Arts. Similar to Unreal Engine 3, CryENGINE 3 is a commercial game engine that offers a free version of the toolkit for non-commercial use only. It also includes a large number of tools for visuals, characters, AI systems, physics, performance, and more.
-\begin{figure}[h!]
+\begin{figure}[!ht]
   \centering \includegraphics[width=0.48\textwidth]{Images/Crysis3_Fields_Warehouse_ConceptArt.png}
 	\caption{Crysis 3 was develop by Crytek using CryENGINE 3. Source: \url{http://www.crysis.com/us/screenshots/crysis-3-concept-art-warehouse}}
 \end{figure}
@@ -211,14 +211,14 @@ Unity3D is a cross platform game engine that can be used for developing games fo
 game development ecosystem: a powerful rendering engine fully integrated with a complete set of intuitive tools and rapid workflows to create interactive 3D content; easy multi-platform publishing; thousands of quality, ready-made assets in the Asset Store and a knowledge-sharing Community. \cite{unity3d}
 \end{quote}
 Although Unity has not been used to produced big name titles like Unreal Engine 3 has, it is still a popular choice especially for mobile application development. Of the featured games provided on the Unity website, a majority of the titles were developed for iOS and Android devices.
-\begin{figure}[h!]
+\begin{figure}[!ht]
   \centering \includegraphics[width=0.48\textwidth]{Images/Escape-plan-screenshot.jpg}
 	\caption{"Escape Plan" Developed using Unity3D for the Playstation Vita. Source: \url{http://en.wikipedia.org/wiki/File:Escape-plan-screenshot.jpg}}
 \end{figure}
 
 \subsection{Cocos2D}
 Cocos2D is an open source 2D game framework released under the MIT License making it free to use and develop for commercial purposes. It has been ported to many different devices including iOS, Android, Blackberry 10, and Windows. There have been thousands of titles produced for mobile devices using Cocos2D.  Unlike Unreal Engine 3, CryENGINE 3, and Unity3D, Cocos2D is not considered a game engine. Its goal is to abstract the details of the low level graphics packages and make game development fast and easy to use for mobile developers. 
-\begin{figure}[h!]
+\begin{figure}[!ht]
   \centering \includegraphics[width=0.48\textwidth]{Images/zombie-smash-screenshot.jpg}
 	\caption{"Zombie Smash" Developed for iOS and Android using Cocos2D. Source: \url{http://www.blogcdn.com/www.tuaw.com/media/2010/03/zombie-smash.jpg}}
 \end{figure}

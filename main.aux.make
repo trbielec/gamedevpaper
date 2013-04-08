@@ -42,7 +42,7 @@
 \AtEndDocument{\ifx\hyper@anchor\@undefined
 \HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
 \bibdata{bibliography}
-\bibstyle{abbrv}
+\bibstyle{IEEEtran}
 \citation{bentley2002putting}
 \citation{bethke2003game}
 \citation{bethke2003game}
